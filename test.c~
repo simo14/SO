@@ -18,7 +18,7 @@ int main (int argc, char *argv[]) {
 	l->contenido="AAAAAAAA";
 	encolar(c,l);
 	printf("%s\n",c->primero->contenido);
-	descolar(c);
+	desencolar(c);
 	printf("%s\n",c->primero->contenido);
 	tail(2);
 	return 0;

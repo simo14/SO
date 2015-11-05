@@ -39,7 +39,7 @@ int tail(int p) {
 		}
 	}
 	leerCola(c);
-	eliminarCola(c);
+	eliminarCola();
 }
 
 void leerCola(struct cola *q){
