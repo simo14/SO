@@ -20,13 +20,13 @@
 	int descolar (struct cola *queue) {
 		printf("Desencolo");
 		if(queue->primero != queue->ultimo){
-			struct linea *temp = queue.primero;
-			queue.primero = queue->primero.next;
+			struct linea *temp = queue->primero;
+			queue->primero = queue->primero->next;
 			free(temp);
 			queue->elementos = queue->elementos--;
 		}else {
-			queue.primero=NULL;
-			queue.ultimo=NULL;
+			queue->primero=NULL;
+			queue->ultimo=NULL;
 			queue->elementos=0;
 		}
 		return 0;	
