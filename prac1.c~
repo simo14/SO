@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "prac1.h"
 #include "liststruc.h"
 
@@ -29,23 +30,25 @@ int tail(int p) {
 	void leerCola(struct cola *q);
 	struct cola *c;
 	c=malloc(sizeof(struct cola));
+	struct linea *l;
 	while(fgets(buf, sizeof buf, stdin) != NULL){
-		struct linea *l;
+
 		l=malloc(sizeof(struct linea));
-		l->contenido = buf;
+		l->contenido=malloc(sizeof(char[1024]));
+		strcpy(l->contenido, buf);
 		encolar(c,l);
-		if(c->elementos >= p){
+		if(c->elementos > p){
 			descolar(c);
 		}
 	}
 	leerCola(c);
-	eliminarCola();
+	eliminarCola(c);
 }
 
 void leerCola(struct cola *q){
 	struct linea *aux = q->primero;
 	while(aux->next != NULL) { 
-		printf("leo uno");
+		printf("leo uno: ");
 		printf("%s\n", aux->contenido);
 		aux=aux->next;
 	}

@@ -19,7 +19,7 @@ int main (int argc, char *argv[]) {
 	encolar(c,l);
 	printf("%s\n",c->primero->contenido);
 	descolar(c);
-	printf("%s\n",c->primero->contenido);
+	//printf("%s\n",c->primero->contenido);		Lo has descolado
 	tail(2);
 	return 0;
 }

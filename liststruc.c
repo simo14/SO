@@ -3,7 +3,6 @@
 #include "liststruc.h"
 	
 	int encolar (struct cola *queue, struct linea *nuevo) {
-		printf("Encolo %s",nuevo->contenido);
 		if(queue->primero==NULL){
 			queue->primero=nuevo;
 			queue->ultimo=nuevo;
@@ -18,7 +17,6 @@
 	}
 	
 	int descolar (struct cola *queue) {
-		printf("Desencolo");
 		if(queue->primero != queue->ultimo){
 			struct linea *temp = queue->primero;
 			queue->primero = queue->primero->next;
