@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "liststruc.h"
+#include "colastruc.h"
 	
 	int encolar (struct cola *queue, struct linea *nuevo) {
 		if(queue->primero==NULL){
