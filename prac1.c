@@ -32,12 +32,12 @@ int tail(int p) {
 	c=malloc(sizeof(struct cola));
 	struct linea *l;
 	while(fgets(buf, sizeof buf, stdin) != NULL){
-
 		l=malloc(sizeof(struct linea));
 		l->contenido=malloc(sizeof(char[1024]));
 		strcpy(l->contenido, buf);
 		encolar(c,l);
-		if(c->elementos = p){
+		
+		if(c->elementos > p){
 			descolar(c);
 		}
 	}
@@ -52,5 +52,7 @@ void leerCola(struct cola *q){
 		printf("%s\n", aux->contenido);
 		aux=aux->next;
 	}
+	printf("leo uno: ");
+	printf("%s\n", aux->contenido);
 }
-               
+          

@@ -11,7 +11,7 @@
 		}else{
 			queue->ultimo->next = nuevo;
 			queue->ultimo = queue->ultimo->next;
-			queue->elementos = queue->elementos++;
+			queue->elementos = queue->elementos+1;
 		}
 		return 0;
 	}
@@ -21,7 +21,7 @@
 			struct linea *temp = queue->primero;
 			queue->primero = queue->primero->next;
 			free(temp);
-			queue->elementos = queue->elementos--;
+			queue->elementos = queue->elementos-1;
 		}else {
 			queue->primero=NULL;
 			queue->ultimo=NULL;

@@ -11,15 +11,15 @@ int main (int argc, char *argv[]) {
 		}
 
 	}
-	struct cola *c;
-	c=malloc(sizeof(struct cola));
-	struct linea *l;
-	l=malloc(sizeof(struct linea));
-	l->contenido="AAAAAAAA";
-	encolar(c,l);
-	printf("%s\n",c->primero->contenido);
-	descolar(c);
+	//struct cola *c;
+	//c=malloc(sizeof(struct cola));
+	//struct linea *l;
+	//l=malloc(sizeof(struct linea));
+	//l->contenido="AAAAAAAA";
+	//encolar(c,l);
+	//printf("%s\n",c->primero->contenido);
+	//descolar(c);
 	//printf("%s\n",c->primero->contenido);		Lo has descolado
-	tail(2);
+	tail(3);
 	return 0;
 }
