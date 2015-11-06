@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "prac1.h"
-#include "liststruc.h"
+#include "colastruc.h"
 
 int head(int m) {
 	int n = m;

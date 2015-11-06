@@ -1,5 +1,5 @@
 #include "prac1.h"
-#include "liststruc.h"
+#include "colastruc.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
