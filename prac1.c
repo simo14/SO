@@ -37,7 +37,7 @@ int tail(int p) {
 		l->contenido=malloc(sizeof(char[1024]));
 		strcpy(l->contenido, buf);
 		encolar(c,l);
-		if(c->elementos > p){
+		if(c->elementos = p){
 			descolar(c);
 		}
 	}
