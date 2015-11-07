@@ -13,6 +13,6 @@ int main (int argc, char *argv[]) {
 
 	}
 	//tail(3);
-	longlines(2);
+	longlines(1);
 	return 0;
 }

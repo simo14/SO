@@ -41,19 +41,22 @@
 
 
 	int rmv(struct listel **listel, int position){
-
 		struct listel *iterator;
 		struct listel *aux;
 		aux= *listel;
 		iterator = *listel;
-		if(((*listel)->content) == NULL){
+		if(((*listel)) == NULL){
+			printf("pasa por aqui1 \n");
 			return 0;
 		} else if ((*listel)->next == NULL) {
+			printf("pasa por aqui2 \n");
 			*listel = NULL;			
 			free(aux);			
 			return 	1;	
-		} else{	
+		} else{
+			printf("pasa por aqui3 \n");
 			while ((iterator->next!=NULL)&&(position>0)){
+				
 				aux= iterator;			
 				position = position -1;
 				iterator = iterator->next;

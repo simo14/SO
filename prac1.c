@@ -48,21 +48,23 @@ int tail(int p) {
 
 int longlines(int r) {
 	int m=r;
+	if (m<1) return 0;
 	char buf[1024];
 	struct listel *l;
 	l=malloc(sizeof(struct listel));
 	while(fgets(buf,sizeof buf, stdin)!=NULL){
 		addInOrder(&l,buf);
-		if(m==0){
+		/*if(m==0){
 			rmv(&l,m);
 		}else {
 			m=m-1;
-		}
+		}*/
 	}
 	struct listel *iterator = l;
-	while(iterator!=NULL){
+	while((iterator!=NULL)&&m>0){
 		printf("%s", iterator->content);
 		iterator = iterator->next;
+		m=m-1;
 	}
 }
 

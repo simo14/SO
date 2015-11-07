@@ -53,16 +53,17 @@ int longlines(int r) {
 	l=malloc(sizeof(struct listel));
 	while(fgets(buf,sizeof buf, stdin)!=NULL){
 		addInOrder(&l,buf);
-		if(m==0){
+		/*if(m==0){
 			rmv(&l,m);
 		}else {
 			m=m-1;
-		}
+		}*/
 	}
-	struct listel iterator = l;
-	while(iterator!=NULL){
+	struct listel *iterator = l;
+	while((iterator!=NULL)&&m>0){
 		printf("%s", iterator->content);
 		iterator = iterator->next;
+		m=m-1;
 	}
 }
 
