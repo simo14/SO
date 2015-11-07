@@ -3,6 +3,7 @@
 #include <string.h>
 #include "prac1.h"
 #include "colastruc.h"
+#include "liststruc.h"
 
 int head(int m) {
 	int n = m;
@@ -45,14 +46,35 @@ int tail(int p) {
 	eliminarCola(c);
 }
 
-void leerCola(struct cola *q){
-	struct linea *aux = q->primero;
-	while(aux->next != NULL) { 
-		printf("leo uno: ");
-		printf("%s\n", aux->contenido);
-		aux=aux->next;
+int longlines(int r) {
+	int m=r;
+	char buf[1024];
+	struct listel *l;
+	l=malloc(sizeof(struct listel));
+	while(fgets(buf,sizeof buf, stdin)!=NULL){
+		addInOrder(&l,buf);
+		if(m==0){
+			rmv(&l,m);
+		}else {
+			m=m-1;
+		}
 	}
-	printf("leo uno: ");
-	printf("%s\n", aux->contenido);
+	struct listel *iterator = l;
+	while(iterator!=NULL){
+		printf("%s", iterator->content);
+		iterator = iterator->next;
+	}
+}
+
+void leerCola(struct cola *q){
+	if(q->primero!=NULL){
+		struct linea *aux = q->primero;
+		while(aux->next != NULL) { 
+			printf("leo uno: ");
+			printf("%s\n", aux->contenido);
+			aux=aux->next;
+		}
+		printf("%s\n", aux->contenido);
+	}
 }
           

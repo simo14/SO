@@ -1,5 +1,5 @@
-#ifndef list_H_INCLUDED		//avoids including the same header file twice in the same compilation
-#define list_H_INCLUDED
+#ifndef liststruc_H_INCLUDED		//avoids including the same header file twice in the same compilation
+#define liststruc_H_INCLUDED
 	struct linea{
 		struct linea *next;
 		char *contenido;

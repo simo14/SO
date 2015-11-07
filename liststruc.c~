@@ -46,7 +46,7 @@
 		struct listel *aux;
 		aux= *listel;
 		iterator = *listel;
-		if(((*listel)->content) == NULL){
+		if((*listel->content) == NULL){
 			return 0;
 		} else if ((*listel)->next == NULL) {
 			*listel = NULL;			

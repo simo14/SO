@@ -14,7 +14,7 @@
 
 	int addInOrder(struct listel **list, char *content);
 
-	int rmv(struct listel **listel, int position);
+	int rmv(struct listel *next, int position);
 
 	int rmvList(struct listel *list);
 

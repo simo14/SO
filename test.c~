@@ -1,4 +1,5 @@
 #include "prac1.h"
+#include "colastruc.h"
 #include "liststruc.h"
 #include <stdlib.h>
 #include <string.h>
@@ -11,15 +12,7 @@ int main (int argc, char *argv[]) {
 		}
 
 	}
-	struct cola *c;
-	c=malloc(sizeof(struct cola));
-	struct linea *l;
-	l=malloc(sizeof(struct linea));
-	l->contenido="AAAAAAAA";
-	encolar(c,l);
-	printf("%s\n",c->primero->contenido);
-	descolar(c);
-	printf("%s\n",c->primero->contenido);
-	tail(2);
+	//tail(3);
+	longlines(1);
 	return 0;
 }
