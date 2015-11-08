@@ -58,7 +58,6 @@
 
 		}
 		if(n==1){
-			printf("elimina %s",iterator->next->content);
 			free(iterator->next);
 			iterator->next=NULL;
 			return 1;

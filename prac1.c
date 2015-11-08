@@ -62,6 +62,7 @@ int longlines(int r) {
 	}
 	struct listel *iterator = l;
 	while((iterator!=NULL)){
+		printf("%s\n",iterator->content);
 		iterator = iterator->next;
 	}
 }
