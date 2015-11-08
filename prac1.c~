@@ -11,9 +11,7 @@ int head(int m) {
 	char string[1024];
 	for(i=0; i<=n-1; i++){
 		if(fgets(string, sizeof(string),stdin)){
-			if(fputs(string, stdout)){		//fputs doesn't add newline like puts	
-				return 0;
-			}else {
+			if(!fputs(string, stdout)){		//fputs doesn't add newline like puts	
 				fprintf(stderr, "Output error.");	
 				return -1;	
 			}	
@@ -23,6 +21,7 @@ int head(int m) {
 		}
 		
 	}
+	return 0;
 }
 
 int tail(int p) {
@@ -62,6 +61,7 @@ int longlines(int r) {
 	}
 	struct listel *iterator = l;
 	while((iterator!=NULL)){
+		printf("%s\n",iterator->content);
 		iterator = iterator->next;
 	}
 }
@@ -70,11 +70,10 @@ void leerCola(struct cola *q){
 	if(q->primero!=NULL){
 		struct linea *aux = q->primero;
 		while(aux->next != NULL) { 
-			printf("leo uno: ");
-			printf("%s\n", aux->contenido);
+			printf("%s", aux->contenido);
 			aux=aux->next;
 		}
-		printf("%s\n", aux->contenido);
+		printf("%s", aux->contenido);
 	}
 }
           
