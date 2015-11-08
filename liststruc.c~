@@ -29,7 +29,7 @@
 			(*list)->next=element;
 			element->next=NULL;		
 		} else{ 					//Another element
-			while((iterator->next->size > len)&&(iterator->next->next!=NULL)){
+			while((iterator->next!=NULL)&&(iterator->next->size > len)){
 				iterator = iterator->next;
 			}
 			element->next = iterator->next;
@@ -58,7 +58,6 @@
 
 		}
 		if(n==1){
-			printf("elimina %s",iterator->next->content);
 			free(iterator->next);
 			iterator->next=NULL;
 			return 1;
