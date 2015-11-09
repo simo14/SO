@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "colastruc.h"
-	
+
 	int encolar (struct cola *queue, struct linea *nuevo) {
+		if(!queue) return -1;		
 		if(queue->primero==NULL){
 			queue->primero=nuevo;
 			queue->ultimo=nuevo;
@@ -17,6 +18,7 @@
 	}
 	
 	int descolar (struct cola *queue) {
+		if (!queue) return -1;		
 		if(queue->primero != queue->ultimo){
 			struct linea *temp = queue->primero;
 			queue->primero = queue->primero->next;
@@ -31,6 +33,7 @@
 	}
 
 	int eliminarCola(struct cola *queue) {
+		if(!queue) return -1;		
 		while (queue->ultimo!=NULL) {
 			descolar(queue);
 		}
