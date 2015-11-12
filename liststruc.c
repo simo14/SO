@@ -6,7 +6,9 @@
 
 #include "liststruc.h"
 
+	//Add a string to the list in order
 	int addInOrder(struct listel **list, char *content){
+		if(!list) return -1;		
 		struct listel *iterator;		
 		struct listel *element;
 		iterator = *list;
@@ -38,12 +40,12 @@
 
 	}
 
-
+	//Remove the i-element of listel
 	int rmv(struct listel **listel, int position){
 		struct listel *iterator;
 		struct listel *aux;
 		int n=position;
-		if (!listel) return 0;
+		if (!listel) return -1;
 		if (position == 0) {
 			aux = *listel;
 			*listel=aux->next;
@@ -60,7 +62,7 @@
 		if(n==1){
 			free(iterator->next);
 			iterator->next=NULL;
-			return 1;
+			return 0;
 		}
 		return 0;
 	}
@@ -78,7 +80,7 @@
 		if (list1->size > list2->size){
 			return 1;
 		} else if (list2->size > list1->size){
-			return 2;
+			return -1;
 		} else
 			return 0;
 

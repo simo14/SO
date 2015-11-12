@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "liststruc.h"
+#include "colastruc.h"
 	
 	int encolar (struct cola *queue, struct linea *nuevo) {
-		printf("Encolo %s",nuevo->contenido);
+		if(!queue) return -1;		
 		if(queue->primero==NULL){
 			queue->primero=nuevo;
 			queue->ultimo=nuevo;
@@ -12,18 +12,18 @@
 		}else{
 			queue->ultimo->next = nuevo;
 			queue->ultimo = queue->ultimo->next;
-			queue->elementos = queue->elementos++;
+			queue->elementos = queue->elementos+1;
 		}
 		return 0;
 	}
 	
 	int descolar (struct cola *queue) {
-		printf("Desencolo");
+		if (!queue) return -1;		
 		if(queue->primero != queue->ultimo){
 			struct linea *temp = queue->primero;
 			queue->primero = queue->primero->next;
 			free(temp);
-			queue->elementos = queue->elementos--;
+			queue->elementos = queue->elementos-1;
 		}else {
 			queue->primero=NULL;
 			queue->ultimo=NULL;
@@ -33,6 +33,7 @@
 	}
 
 	int eliminarCola(struct cola *queue) {
+		if(!queue) return -1;		
 		while (queue->ultimo!=NULL) {
 			descolar(queue);
 		}
