@@ -7,7 +7,6 @@
 #include "liststruc.h"
 
 	int addInOrder(struct listel **list, char *content){
-		//struct listel *list = *listpointer;
 		struct listel *iterator;		
 		struct listel *element;
 		iterator = *list;
@@ -46,9 +45,10 @@
 		int n=position;
 		if (!listel) return 0;
 		if (position == 0) {
-			free(*listel);
-			*listel=NULL;
-			return 1;
+			aux = *listel;
+			*listel=aux->next;
+			free(aux);
+			return 0;
 		}
 		iterator = *listel;
 		while((n>1)&&(iterator->next!=NULL)){			
@@ -67,9 +67,10 @@
 
 
 	int rmvList(struct listel *list){
-
-
-
+		struct listel *iterator=list;
+		while(iterator->next!=NULL){
+			rmv(&list, 0);
+		}
 	}
 
 

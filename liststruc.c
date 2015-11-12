@@ -45,9 +45,10 @@
 		int n=position;
 		if (!listel) return 0;
 		if (position == 0) {
-			free(*listel);
-			*listel=NULL;
-			return 1;
+			aux = *listel;
+			*listel=aux->next;
+			free(aux);
+			return 0;
 		}
 		iterator = *listel;
 		while((n>1)&&(iterator->next!=NULL)){			
@@ -66,9 +67,9 @@
 
 
 	int rmvList(struct listel *list){
-
-
-
+		while(list->next!=NULL){
+			rmv(&list, 0);
+		}
 	}
 
 

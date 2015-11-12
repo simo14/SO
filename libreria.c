@@ -64,6 +64,7 @@ int longlines(int r) {
 		printf("%s",iterator->content);
 		iterator = iterator->next;
 	}
+	rmvList(l);
 }
 
 void leerCola(struct cola *q){

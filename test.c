@@ -1,4 +1,4 @@
-#include "prac1.h"
+#include "libreria.h"
 #include "colastruc.h"
 #include "liststruc.h"
 #include <stdlib.h>
@@ -25,7 +25,6 @@ int main (int argc, char *argv[]) {
 			if(longlines(atoi(argv[2]))!=0){
 				printf("Hubo un error\n");
 				return -1;
-			}
 		}
 
 	}
