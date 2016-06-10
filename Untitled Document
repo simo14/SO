@@ -1,3 +1,0 @@
-gcc -o test test.c libreria.a
-
-Buena: gcc test.c liststruc.c colastruc.c prac1.c -o test

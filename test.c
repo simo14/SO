@@ -25,6 +25,7 @@ int main (int argc, char *argv[]) {
 			if(longlines(atoi(argv[2]))!=0){
 				printf("Hubo un error\n");
 				return -1;
+			}
 		}
 
 	}
